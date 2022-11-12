@@ -14,10 +14,34 @@ $stmt = $conn->query("SELECT * FROM countries WHERE name LIKE '%$country%' ");
 
 
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
-<ul>
-<?php foreach ($results as $row): ?>
-  <li><?= $row['name'] . ' is ruled by ' . $row['head_of_state']; ?></li>
-<?php endforeach; ?>
-</ul>
+
+
+<body>
+  <table id="resultsTable">
+    <thead>
+      <tr>
+        <th>Country Name</th>
+        <th>Continent</th>
+        <th>Day of Independence</th>
+        <th>Head of State</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <?php
+      foreach($results as $countryRecord){
+        ?>
+          <tr>
+            <td> <?= $countryRecord['name']; ?></td>
+            <td> <?= $countryRecord['continent']; ?></td>
+            <td> <?= $countryRecord['independence_year']; ?></td>
+            <td> <?= $countryRecord['head_of_state']; ?></td>
+          </tr>
+        <?php
+      }
+      ?>
+    </tbody>
+  </table>
+  
+</body>
