@@ -32,6 +32,7 @@ h1{
     width: 60%;
     height: 40px;
     margin: 50px;
+    margin-left: 12%;
     display: flex;
     justify-content: center;
 }
@@ -48,19 +49,26 @@ main input{
     box-shadow:1px 1px 1px 1px;
 }
 
-/* country lookup button */
-#lookup{
-    background-color: rgb(70, 98, 74); /* Green */
+main button{
     border: none;
     color: white;
     padding: 5px 20px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+    font-size: 15px;
     margin-left: 4%;
     margin-top: 1px;
     cursor: pointer;
+}
+
+/* country lookup button */
+#lookup{
+    background-color: #62465E;
+}
+
+/* cities lookup button */
+#citiesSearchBtn{
+    background-color: #465062;
 }
 
 /* Styling table */
